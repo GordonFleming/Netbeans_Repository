@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/flemi/Documents/GitHub/Netbeans_Repository/Calculator/sqlite/OpenDB/FatFightersDB.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1010"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblWeighIn"/><default_encoding codec=""/><browsetable_info data="AAAAAwAAABQAdABiAGwAVwBlAGkAZwBoAEkAbgAAAAEAAAAAAAAAAQAAAAIAAADLAAAAAAAAAAAA//////////8AAAAA/////wAAABIAdABiAGwAUABlAG8AcABsAGUAAAAFAAAAAQAAAAEAAAAHAAAAxQAAAAAAAAAAAP//////////AAAAAP////8AAAAUAHQAYgBsAFAAYQB5AG0AZQBuAHQAAAAAAAAAAAAAAAEAAAADAAAAmwAAAAAAAAAAAP//////////AAAAAP////8="/></tab_browse><tab_sql><sql name="SQL 1">select *
-from tblPeople
-order by S_Weight desc, Height </sql><sql name="SQL 2">--update tblPeople
---set S_Weight = S_Weight+(S_Weight*0.1)
---where ;
---Update tblPeople
---set G_Weight = G_Weight+(G_Weight*0.1);
-update tblWeighIn
-set Weight = Weight+(Weight*0.1)
-where strftime('%m',WeighDate) = '05';</sql><sql name="SQL 3">select PersonID, min(Weight) as LowWeight
-from tblWeighIn
-where strftime('%m',WeighDate) != '05' and strftime('%m',WeighDate) != '07'
-group by PersonID</sql><current_tab id="2"/></tab_sql></sqlb_project>
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="U:/Netbeans_Repository/Calculator/sqlite/OpenDB/FatFightersDB.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="906"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblWeighIn"/><default_encoding codec=""/><browsetable_info data="AAAAAwAAABQAdABiAGwAVwBlAGkAZwBoAEkAbgAAAAEAAAAAAAAAAQAAAAIAAADLAAAAAAAAAAAA//////////8AAAAA/////wAAABIAdABiAGwAUABlAG8AcABsAGUAAAAFAAAAAQAAAAEAAAAHAAAAxQAAAAAAAAAAAP//////////AAAAAP////8AAAAUAHQAYgBsAFAAYQB5AG0AZQBuAHQAAAAAAAAAAAAAAAEAAAADAAAAmwAAAAAAAAAAAP//////////AAAAAP////8="/></tab_browse><tab_sql><sql name="SQL 1">select *
+from tblPeople
+order by S_Weight desc, Height </sql><sql name="SQL 2">--update tblPeople
+--set S_Weight = S_Weight+(S_Weight*0.1)
+--where ;
+--Update tblPeople
+--set G_Weight = G_Weight+(G_Weight*0.1);
+update tblWeighIn
+set Weight = Weight+(Weight*0.1)
+where strftime('%m',WeighDate) = '05';</sql><sql name="SQL 3">select PersonID, min(Weight) as LowWeight
+from tblWeighIn
+where strftime('%m',WeighDate) != '05' and strftime('%m',WeighDate) != '07'
+group by PersonID</sql><sql name="SQL 7">select FirstName, Surname,cast((G_Weight/Height)*(G_Weight/Height) as int) as BMI
+from tblPeople</sql><sql name="SQL 8">insert into tblWeighIn(PersonID, WeighDate, Weight)
+values(18,'2016-06-01 00:00:00', 174.9)</sql><sql name="SQL 9"></sql><current_tab id="2"/></tab_sql></sqlb_project>

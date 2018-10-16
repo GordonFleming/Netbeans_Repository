@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/flemi/Documents/GitHub/Netbeans_Repository/Calculator/sqlite/OpenDB/RecruitmentDB.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1010"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblClients"/><default_encoding codec=""/><browsetable_info data="AAAABAAAABQAdABiAGwAUwBlAHIAdgBpAGMAZQAAAAIAAAAAAAAAAQAAAAIAAAFbAAAAAAAAAAAA//////////8AAAAA/////wAAABQAdABiAGwAQwBsAGkAZQBuAHQAcwAAAAYAAAABAAAAAQAAAAQAAACzAAAAAAAAAAAA//////////8AAAAA/////wAAACAAdABiAGwAQQBnAGUAbgBjAHkAUwBlAHIAdgBpAGMAZQAAAAIAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAP////8AAAAWAHQAYgBsAEEAZwBlAG4AYwBpAGUAcwAAAAIAAAAAAAAAAwAAAAUAAADOAAAABAAAAHYAAAACAAAA5AAAAAAAAAAAAP//////////AAAAAP////8="/></tab_browse><tab_sql><sql name="SQL 1">select *
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="U:/Netbeans_Repository/Calculator/sqlite/OpenDB/RecruitmentDB.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="906"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblClients"/><default_encoding codec=""/><browsetable_info data="AAAABAAAABQAdABiAGwAUwBlAHIAdgBpAGMAZQAAAAIAAAAAAAAAAQAAAAIAAAFbAAAAAAAAAAAA//////////8AAAAA/////wAAABQAdABiAGwAQwBsAGkAZQBuAHQAcwAAAAYAAAABAAAAAQAAAAQAAACzAAAAAAAAAAAA//////////8AAAAA/////wAAACAAdABiAGwAQQBnAGUAbgBjAHkAUwBlAHIAdgBpAGMAZQAAAAIAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAP////8AAAAWAHQAYgBsAEEAZwBlAG4AYwBpAGUAcwAAAAIAAAAAAAAAAwAAAAUAAADOAAAABAAAAHYAAAACAAAA5AAAAAAAAAAAAP//////////AAAAAP////8="/></tab_browse><tab_sql><sql name="SQL 1">select *
 from tblAgencies
 order by Province, NumPrevPlacements desc</sql><sql name="SQL 2">select Name, Surname, 'R' || Round(0.15*Salary,2) as Bonus
 from tblClients
@@ -7,13 +7,13 @@ values(&quot;21&quot;,&quot;Future Stars&quot;,&quot;Gauteng&quot;,&quot;False&q
 from tblAgencies
 left join tblClients on tblAgencies.AgencyID = tblClients.AgencyID
 where strftime('%Y',tblClients.DatePlaced) is not '2017' </sql><sql name="SQL 6">update tblService
-set ServiceDescription = replace(ServiceDescription,&quot;Candidate&quot;,&quot;Client&quot;)</sql><sql name="SQL 7">select AgencyName, International, sum(ServiceID) as NumofServices
-from tblAgencies
-left join tblAgencyService on tblAgencies.AgencyID = tblAgencyService.AgencyID
-where International = 'True'
-group by AgencyName</sql><sql name="SQL 8">select AgencyName, Province, count(*) as 'NumberOfPlacements', avg(Salary) as 'AverageSalaries' 
-from tblAgencies
-left join tblClients
-on tblClients.AgencyID = tblAgencies.AgencyID
-group by AgencyName
+set ServiceDescription = replace(ServiceDescription,&quot;Candidate&quot;,&quot;Client&quot;)</sql><sql name="SQL 7">select AgencyName, International, count(ServiceID) as NumofServices
+from tblAgencies
+left join tblAgencyService on tblAgencies.AgencyID = tblAgencyService.AgencyID
+where International = 'True'
+group by AgencyName</sql><sql name="SQL 8">select AgencyName, Province, count(*) as 'NumberOfPlacements', 'R' || avg(Salary) as 'AverageSalaries' 
+from tblAgencies
+left join tblClients
+on tblClients.AgencyID = tblAgencies.AgencyID
+group by AgencyName
 having NumberOfPlacements &gt; 4</sql><current_tab id="6"/></tab_sql></sqlb_project>
