@@ -12,13 +12,14 @@ from tblWeighIn
 where strftime('%m',WeighDate) != '05' and strftime('%m',WeighDate) != '07'
 group by PersonID</sql><sql name="SQL 7">select FirstName, Surname,cast((G_Weight)/((Height)*(Height)) as int) as BMI
 from tblPeople</sql><sql name="SQL 8">insert into tblWeighIn(PersonID, WeighDate, Weight)
-values(18,'2016-06-01 00:00:00', 174.9)</sql><sql name="SQL 9">select *
-from tblPeople
-left join tblWeighIn on tblWeighIn.PersonID = tblPeople.PersonID
-where G_Weight &gt;= Weight and strftime('%m',WeighDate) = '07'</sql><sql name="SQL 8">select FirstName, Surname, Height
-from tblPeople
-where Height &lt; (select avg(Height) from tblPeople)
-</sql><sql name="SQL 9">select FirstName, Surname, 'R' || (sum(tblPayment.AmountPaid)) as 'Outstanding balance'
-from tblPeople
+values(18,'2016-06-01 00:00:00', 174.9)</sql><sql name="SQL 9">select *
+from tblPeople
+left join tblWeighIn on tblWeighIn.PersonID = tblPeople.PersonID
+where G_Weight &gt;= Weight and strftime('%m',WeighDate) = '07'</sql><sql name="SQL 8">select FirstName, Surname, Height
+from tblPeople
+where Height &lt; (select avg(Height) from tblPeople)
+</sql><sql name="SQL 9">select FirstName, Surname, 'R' || (1000-(sum(tblPayment.AmountPaid))) as 'Outstanding balance'
+from tblPeople
 left join tblPayment on tblPayment.PersonID = tblPeople.PersonID
-group by FirstName</sql><current_tab id="7"/></tab_sql></sqlb_project>
+group by FirstName
+having (1000-(sum(tblPayment.AmountPaid))) &gt; 0</sql><current_tab id="7"/></tab_sql></sqlb_project>
