@@ -1,0 +1,12 @@
+BM 78 GT GP,Kia,Carnival,Red,3
+BMP 456 GP,Honda,Jazz,Blue,4
+GMP 657 GP,Nissan,GTR,Black,5
+HPT 546 GP,Honda,Civic,Blue,1
+Kassie,Kia,Seronto,Green,8
+NKP 042 GP,Toyota,Corolla,White,20
+PM 45 HK GP,Mercedes,SLK200,Blue,3
+Six Pack,Ford,Fiesta,Green,6
+Toy4U2C,Toyota,Fortuner,Silver,2
+TR 76 KP GP,Nissan,Micro,White,3
+WPT 324 GP,Toyoto,Yaris,Black,8
+ZMY 564 GP,Mercedes,C Class,White,9

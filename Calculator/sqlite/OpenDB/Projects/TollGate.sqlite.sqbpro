@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/flemi/Documents/GitHub/Netbeans_Repository/Calculator/sqlite/Practice/Nov Theory and Prac 2012/Learner Files/TollGate.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1010"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblCars"/><default_encoding codec=""/><browsetable_info data="AAAAAgAAABYAdABiAGwAVABvAGwAbABHAGEAdABlAAAAAwAAAAAAAAABAAAAAwAAAMsAAAAAAAAAAAD//////////wAAAAD/////AAAADgB0AGIAbABDAGEAcgBzAAAAAAAAAAAAAAABAAAAAQAAALsAAAAAAAAAAAD//////////wAAAAD/////"/></tab_browse><tab_sql><sql name="SQL 1">select *
+from tblCars
+order by make, model</sql><sql name="SQL 2">select tblCars.RegNo
+from tblCars
+left join tblTollGate on tblCars.RegNo = tblTollGate.RegNo
+where TollGate = 'Heron'</sql><sql name="SQL 3">select *, count(Make) as &quot;ToyotaCount&quot;
+from tblCars
+where Make = 'Toyota'</sql><sql name="SQL 4">select TollGate, count(*) as &quot;TotalPassed&quot;
+from tblTollGate
+group by TollGate</sql><sql name="SQL 5">select tblCars.RegNo, Make, TollGate
+from tblTollGate
+left join tblCars on tblTollGate.RegNo = tblCars.RegNo
+where TollGate = 'Heron' and strftime('%d',tblTollGate.DateTime) = '02' and strftime('%H',tblTollGate.DateTime) &lt; '11'</sql><sql name="SQL 6">select *
+from tblTollGate
+where TollGate = 'Stork'
+order by DateTime
+limit 3</sql><sql name="SQL 7">insert into tblCars(RegNo,Make,Model,Colour)
+values('KMA','Tesla','sublime','Silver')</sql><sql name="SQL 8">delete 
+from tblCars
+where RegNo = 'Kassie' </sql><sql name="SQL 9">select *, substr(RegNo,1,2) || substr(Make,3,1) || substr(Model,length(Model)-1,2)
+from tblCars</sql><current_tab id="8"/></tab_sql></sqlb_project>
