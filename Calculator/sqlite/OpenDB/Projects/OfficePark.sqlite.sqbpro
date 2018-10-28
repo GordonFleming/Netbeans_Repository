@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/flemi/Documents/GitHub/Netbeans_Repository/Calculator/sqlite/OpenDB/OfficePark.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1010"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblOffice"/><default_encoding codec=""/><browsetable_info data="AAAABAAAABAAdABiAGwAUwB0AGEAZgBmAAAAAgAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAD//////////wAAAAD/////AAAAHAB0AGIAbABPAGYAZgBpAGMAZQBCAGwAbwBjAGsAAAAAAAAAAAAAAAQAAAAFAAAAvgAAAAMAAADIAAAAAgAAAOYAAAABAAAA4wAAAAAAAAAAAP//////////AAAAAP////8AAAASAHQAYgBsAE8AZgBmAGkAYwBlAAAAAAAAAAAAAAACAAAABAAAALgAAAACAAAAvgAAAAAAAAAAAP//////////AAAAAP////8AAAAeAHMAcQBsAGkAdABlAF8AcwBlAHEAdQBlAG4AYwBlAAAAAAAAAAAAAAACAAAAAgAAAGQAAAABAAAAZAAAAAAAAAAAAP//////////AAAAAP////8="/></tab_browse><tab_sql><sql name="SQL 1">select Firstname, surname
+from tblStaff
+order by surname</sql><sql name="SQL 2">select OfficeName
+from tblOffice
+where internetAcsPts &gt; 2 and CornerOffice = 'True'</sql><sql name="SQL 3">update tblOfficeBlock
+set parking = parking*2</sql><sql name="SQL 4">insert into tblStaff(Firstname, surname, salary, dateOfBirth, OfficeID)
+values ('Gordon','Fleming',20000,'2001-09-17 00:00:00',3)</sql><sql name="SQL 5">delete 
+from tblStaff
+where Firstname = 'Frank' and surname = 'Oswald'</sql><sql name="SQL 6">select SuperVisor, count(*) as NumOffice 
+from tblOfficeBlock
+left join tblOffice on tblOfficeBlock.officeBlockID = tblOffice.OfficeBlockID
+group by Supervisor
+having count(*) &gt; 4</sql><sql name="SQL 7">select Firstname, surname, (strftime('%Y',date('now'))-strftime('%Y',dateOfBirth)) as Age 
+from tblStaff
+group by Firstname
+having (strftime('%Y',date('now'))-strftime('%Y',dateOfBirth)) &gt; avg((strftime('%Y',date('now'))-strftime('%Y',dateOfBirth))) </sql><sql name="SQL 8">select substr(Firstname,1,3) || substr(surname,length(surname)-2,3) as Code
+from tblStaff</sql><sql name="SQL 9">select BlockName, 'R' || round(avg(salary+salary*0.25),2) as AvgIncrease
+from (tblOfficeBlock left JOIN tblOffice ON tblOfficeBlock.officeBlockID = tblOffice.OfficeBlockID)
+left JOIN tblStaff ON tblOffice.officeID = tblStaff.officeID
+group by tblOfficeBlock.officeBlockID</sql><current_tab id="8"/></tab_sql></sqlb_project>
