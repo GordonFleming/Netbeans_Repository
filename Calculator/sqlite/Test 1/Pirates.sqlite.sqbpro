@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/24740/Desktop/Pirates.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="906"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblShipAllocate"/><default_encoding codec=""/><browsetable_info data="AAAABAAAABAAdABiAGwAUwBoAGkAcABzAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAA/////wAAAB4AdABiAGwAUwBoAGkAcABBAGwAbABvAGMAYQB0AGUAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAD/////AAAAFAB0AGIAbABQAGkAcgBhAHQAZQBzAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAA/////wAAAB4AdABiAGwATQBlAGQAQwBvAG4AZABpAHQAaQBvAG4AAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAD/////"/></tab_browse><tab_sql><sql name="SQL 1">select FirstName, Surname, Height, Gender
+from tblPirates
+where Gender = 'M'
+order by Height</sql><sql name="SQL 2">select Surname, Weight, (Weight-(KgLost)) as CurrentWeight
+from tblPirates</sql><sql name="SQL 3">insert into tblMedCondition(MedID,Description)
+values (9999,'Aquaphobia')</sql><sql name="SQL 4">select FirstName
+from tblPirates
+where MedID is null or MedID = ''</sql><sql name="SQL 5">select ShipName, count(tblPirates.PirateID) as 'NumPirates' 
+from tblShips 
+inner join tblShipAllocate on tblShips.ShipID = tblShipAllocate.ShipID
+left join tblPirates on tblPirates.PirateID = tblShipAllocate.PirateID
+group by ShipName
+having count(*) &gt;= 5</sql><sql name="SQL 6">select Gender, sum(kgLost) as 'WeightLoss'
+from tblPirates
+group by Gender</sql><sql name="SQL 7">select FirstName, ShipName
+from tblPirates, tblShips
+left join tblShipAllocate on tblPirates.PirateID = tblShipAllocate.PirateID
+where substr(FirstName,1,1) = substr(ShipName,1,1)
+group by ShipName</sql><sql name="SQL 8">select *, substr(ShipName,2,3) || (random() between 0 and 9) as 'Code'
+from tblShips</sql><sql name="SQL 9">select Surname, round((weight)/((Height)*(Height)),2) as 'BMI'
+from tblPirates
+group by Surname
+having (weight)/((Height)*(Height)) &gt; 25 and (MedID != '' or MedID is not null)</sql><current_tab id="7"/></tab_sql></sqlb_project>

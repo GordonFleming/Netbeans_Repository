@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/24740/Desktop/Test 2/SportFest.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="906"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblStudent"/><default_encoding codec=""/><browsetable_info data="AAAABAAAABQAdABiAGwAUwB0AHUAZABlAG4AdAAAAAAAAAAAAAAAAwAAAAYAAABwAAAABQAAAH8AAAABAAAAZAAAAAAAAAAAAP//////////AAAAAP////8AAAAWAHQAYgBsAFAAYQB5AG0AZQBuAHQAcwAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAP////8AAAAUAHQAYgBsAEMAbwBhAGMAaABlAHMAAAAAAAAAAAAAAAEAAAABAAAAfwAAAAAAAAAAAP//////////AAAAAP////8AAAAUAHQAYgBsAEEAYwBjAG8AdQBuAHQAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAD/////"/></tab_browse><tab_sql><sql name="SQL 1">select KitPrice, Coach, Sport
+from tblCoaches
+order by KitPrice desc, Coach</sql><sql name="SQL 2">insert into tblStudent(Surname,FName,DOB,AccountNum, KitReceived)
+values ('Fini','Jane','1998-07-07 00:00:00','FINI7','False')</sql><sql name="SQL 3">select Surname, FName, DOB, (strftime('%Y',date('now'))-strftime('%Y',DOB)) as 'Age'
+from tblStudent
+where substr(SportTeamID,1,1) = 'B'
+order by Age
+limit 5</sql><sql name="SQL 4">select Surname, FName, SportTeamID
+from tblStudent
+where substr(SportTeamID,1,1) = 'G' and Surname like 'van%' or Surname like 'de%'</sql><sql name="SQL 5">select Surname, FName
+from tblStudent
+left join tblPayments on tblStudent.AccountNum = tblPayments.AccountNum
+where KitReceived = 'False' and AmountPaid is not null</sql><sql name="SQL 6">select SportTeamID, 'R' || sum(AmountPaid) as 'Total Paid'
+from tblPayments
+left join tblStudent on tblPayments.AccountNum = tblStudent.AccountNum
+group by SportTeamID</sql><sql name="SQL 7">select Surname, FName, (strftime('%Y',date('now'))-strftime('%Y',DOB)) as 'Age'
+from tblStudent
+group by Surname
+having Age &gt; avg(strftime('%Y',date('now'))-strftime('%Y',DOB))</sql><sql name="SQL 8">select *, substr(Surname,1,4) || cast(((random()/9223372036854775807)*9-0) as int) as 'Unique Code' 
+from tblStudent</sql><current_tab id="7"/></tab_sql></sqlb_project>
