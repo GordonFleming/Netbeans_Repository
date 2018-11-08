@@ -70,7 +70,7 @@ public class AuthenticateTtR_V2 {
                 try{
                     inputNum=Integer.parseInt(input);
                     Calculator(inputNum);
-                } catch(InputMismatchException ex){
+                } catch(NumberFormatException ex){
                     System.out.println("Wrong input");
                 }
             }
@@ -78,13 +78,14 @@ public class AuthenticateTtR_V2 {
         
         System.out.println("How many tunnels were left?");
         tunnels = in.nextInt();
+        while(tunnels > 3){
         if(tunnels > 3){
             System.out.println("Invalid");
         }else
             System.out.println("Enter valid number (0-3)");
         tunnels = in.nextInt();
         totTunnels += tunnels*4;
-        
+        }
         System.out.println("Did you get the longest train?\t(Yes / No)");
         if(in.next().toLowerCase().equals("yes")){
             longest=10;
@@ -93,7 +94,7 @@ public class AuthenticateTtR_V2 {
         
         Postscore = (running+totTunnels+longest);
         
-        System.out.println("Hello "+team+", Your score was calculated as  " + Postscore + "  compared to your prescore of  " + Prescore); 
+        System.out.println("Hello "+team+", \nYour score was calculated as  " + Postscore + "  compared to your prescore of  " + Prescore); 
         System.out.println("Trains total count is "+running+" and Tunnels are "+totTunnels+" plus longest "+longest);
     }
 }
