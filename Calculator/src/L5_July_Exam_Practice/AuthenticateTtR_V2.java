@@ -4,9 +4,7 @@
  */
 package L5_July_Exam_Practice;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
+import java.util.*;
 /**
  *
  * @author gordonfleming
@@ -79,13 +77,14 @@ public class AuthenticateTtR_V2 {
         System.out.println("How many tunnels were left?");
         tunnels = in.nextInt();
         while(tunnels > 3){
-        if(tunnels > 3){
-            System.out.println("Invalid");
-        }else
-            System.out.println("Enter valid number (0-3)");
-        tunnels = in.nextInt();
-        totTunnels += tunnels*4;
+            if(tunnels > 3){
+                System.out.println("Invalid");
+            }else
+                System.out.println("Enter valid number (0-3)");
+            tunnels = in.nextInt();
+            totTunnels += tunnels*4;
         }
+        
         System.out.println("Did you get the longest train?\t(Yes / No)");
         if(in.next().toLowerCase().equals("yes")){
             longest=10;
