@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/gordonfleming/Desktop/G11 Nov 2017/Learner Files/Section A/LeaderDB.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1622"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblPortfolio"/><default_encoding codec=""/><browsetable_info data="AAAAAQAAABgAdABiAGwAUABvAHIAdABmAG8AbABpAG8AAAABAAAAAAAAAAMAAAAIAAAAoAAAAAcAAABNAAAABgAAAE8AAAAAAAAAAAD//////////wAAAAD/////"/></tab_browse><tab_sql><sql name="SQL 1">select portfolio, Section
+from tblPortfolio
+order by  Section asc, portfolio asc</sql><sql name="SQL 2">select LeaderName, StaffRating, StudentRating, NumberLearners
+from tblPortfolio
+group by LeaderName
+having (StaffRating &gt; 3 or StudentRating &gt; 3) and NumberLearners &gt; 20</sql><sql name="SQL 3">select LeaderName, DOB, (strftime('%Y',date('now'))-strftime('%Y',DOB)) as Age, strftime('%m',DOB) as month,
+case 
+when strftime('%m-%d',DOB) - strftime('%m-%d',date('now')) &gt; 0
+then  (strftime('%Y',date('now'))-strftime('%Y',DOB))  -1
+else (strftime('%Y',date('now'))-strftime('%Y',DOB))
+end as CorrectAge
+from tblPortfolio
+where age is not null
+</sql><sql name="SQL 4">select *,strftime('%m',DOB) - strftime('%m',date('now'))
+from tblPortfolio</sql><current_tab id="2"/></tab_sql></sqlb_project>
