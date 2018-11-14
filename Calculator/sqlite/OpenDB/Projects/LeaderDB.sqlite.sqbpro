@@ -11,5 +11,22 @@ else (strftime('%Y',date('now'))-strftime('%Y',DOB))
 end as CorrectAge
 from tblPortfolio
 where age is not null
-</sql><sql name="SQL 4">select *,strftime('%m',DOB) - strftime('%m',date('now'))
-from tblPortfolio</sql><current_tab id="2"/></tab_sql></sqlb_project>
+</sql><sql name="SQL 4">select *, count(portfolio) as NumPortfolios
+from tblPortfolio
+group by Section</sql><sql name="SQL 5">select LeaderName, Boarder, avg((StaffRating+StudentRating)/2.0) as AveRating
+from tblPortfolio
+where Boarder = 'True'
+group by LeaderName, Boarder
+having AveRating &gt;= 3
+order by AveRating asc</sql><sql name="SQL 6">select &quot;Number of Learners in &quot; || Section || &quot; &quot; || sum(NumberLearners) as TotalLearners
+from tblPortfolio
+group by Section
+having sum(NumberLearners) &gt; 50
+</sql><sql name="SQL 7">select portfolio,
+case
+when portfolio = 'Swimming'
+then round(sum(NumberLearners) + (sum(NumberLearners)*0.2),0)
+else sum(NumberLearners)
+end as NumberLearners
+from tblPortfolio
+group by portfolio</sql><current_tab id="6"/></tab_sql></sqlb_project>
