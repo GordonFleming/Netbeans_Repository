@@ -1,0 +1,28 @@
+Name the component that is primary memory but is powered by a small battery.#CMOS#Hardware
+What is the name of the data structure that can store elements of the same type.#Array#Programming
+Give the name of the programming structure to repeat an instruction a fixed number of times.#For loop#Programming
+True or False.  A while loop can never be infinite.#False#Programming
+True or False.  A global variable can be accessed throughout a program.#True#Programming
+A(n) ---------- is a variable that never changes.#Constant#Programming
+True or False.  An alias is the cute girl on TV who does amazing karate moves.#False#Programming
+Another word for creating an object is ----------.#Instantiation#Programming
+A common name for a programming error is a  --------.#Bug#Programming
+A(n) -------- translates source code line by line.#Interpreter#System Software
+Give the common name for malicious code that can damage your computer.#Virus#System Software
+Give the name of system software that manages and controls the computer.#Operating System#System Software
+A(n) ------- is a signal sent from a device to the CPU to indicate that the device needs servicing.#Interrupt#System Software
+----- memory is used to speed up access to slower RAM.#Cache#Hardware
+The process of making extra copies of all your important files is called -------.#Backup#System Software
+Data ------ is where files are made smaller to take up less space.#Compression#System Software
+----- is where an instruction is divided into stages so that the CPU executes an instruction on each clock tick.#Pipelining#Hardware
+A device to convert analog signals to digital signals and visa versa.#Modem#Hardware
+A type of memory that is used when the computers hard drive is used to simulate RAM.#Virtual#System Software
+A user friendly interface that consists of windows, icons, mouse and a pointer. (Give the three letter acronym).#GUI#System Software
+A type of printer that uses toner.#Laser#Hardware
+An input device that can represent a picture or text on paper digitally.#Scanner#Hardware
+A hard disk is divided into ----- and sectors.#Tracks#Hardware
+A type of bus that is exclusively used for graphics. (Give the acronym)#AGP#Hardware
+The ------- bus transfers data and instructions from the RAM to the CPU.#Data#Hardware
+An optical medium that can store about 700 MB.#CD#Hardware
+The program counter on the CPU is an example of a ------.#Register#Hardware
+Games are the only types of application packages#False#System Software

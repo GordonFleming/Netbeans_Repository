@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/gordonfleming/Desktop/Nov Theory and Prac 2011/Learner Files/Driving.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1453"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="Student"/><default_encoding codec=""/><browsetable_info data="AAAAAQAAAA4AUwB0AHUAZABlAG4AdAAAAAAAAAAAAAAABAAAAAkAAACLAAAACAAAAIIAAAAGAAAAyQAAAAQAAAC2AAAAAAAAAAAA//////////8AAAAA/////w=="/></tab_browse><tab_sql><sql name="SQL 1">select *
+from Student
+order by LastName asc, FirstName asc</sql><sql name="SQL 2">select FirstName, PhoneNum
+from Student
+where PhoneNum like &quot;%555%&quot;</sql><sql name="SQL 3">select LastName
+from Student
+where AmountPaid = '0' and Gender = 'F'</sql><sql name="SQL 4">insert into Student (FirstName,LastName,PhoneNum,Suburb,DateOfBirth,Gender,InstructorName,LessonsBooked,AmountPaid)
+values (&quot;Gordon&quot;,&quot;Fleming&quot;,&quot;(011) 676 8946&quot;,&quot;Birnam&quot;, &quot;2001-09-17 00:00:00&quot;,&quot;M&quot;,&quot;Doris&quot;,4,200)</sql><sql name="SQL 5">delete 
+from Student
+where FirstName =  &quot;Wynand&quot;</sql><sql name="SQL 6">select InstructorName, count(*) as NumStudents
+from Student
+group by InstructorName</sql><sql name="SQL 7">select *, (LessonsBooked*200)-AmountPaid as AmountOwed
+from Student
+group by FirstName
+having AmountOwed &gt;0</sql><sql name="SQL 8">select *, strftime('%Y',date('now')) - strftime('%Y',DateOfBirth) as age
+from Student
+order by age asc</sql><sql name="SQL 9">select *
+from Student
+order by LessonsBooked desc
+limit 3</sql><current_tab id="8"/></tab_sql></sqlb_project>

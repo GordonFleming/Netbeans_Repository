@@ -1,0 +1,20 @@
+Hellboy#47#27#silver,bandage,chant
+Darth Vader#46#39#gold,ointment,lamp
+Harry Potter#39#24#wood,ointment,lamp
+Han Solo#12#21#gold,ointment,lamp
+Yoda#18#35#silver,wand,potion
+Buffy#39#29#silver,bandage,chant
+Godzilla#10#39#gold,bandage,chant
+Ellen Ripley#44#22#bronze,wand,potion
+Agent Smith#34#33#bronze,bandage,chant
+Neo#37#37#bronze,ointment,lamp
+Bender#47#25#bronze,bandage,chant
+Gandalf#48#30#straw,bandage,chant
+Optimus Prime#30#39#bronze,bandage,chant
+Robocop#26#21#straw,bandage,chant
+Terminator#46#32#silver,ointment,lamp
+Chewbacca#11#25#bronze,wand,potion
+Spock#30#40#bronze,wand,potion
+Data#44#34#gold,ointment,lamp
+Frodo#47#30#wood,wand,potion
+Tron#40#26#wood,bandage,chant

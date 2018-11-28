@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/gordonfleming/Desktop/Nov Prac andTheory 2106/Learner Files/Section A/DamsDB.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1111"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblTowns"/><default_encoding codec=""/><browsetable_info data="AAAAAgAAABAAdABiAGwAVABvAHcAbgBzAAAAAAAAAAAAAAABAAAABAAAAJYAAAAAAAAAAAD//////////wAAAAD/////AAAADgB0AGIAbABEAGEAbQBzAAAABAAAAAEAAAACAAAABAAAAIwAAAACAAAAfwAAAAAAAAAAAP//////////AAAAAP////8="/></tab_browse><tab_sql><sql name="SQL 1">select *
+from tblDams
+order by River asc, DamName asc</sql><sql name="SQL 2">select TownName, Province, Population
+from tblTowns
+where WaterRestrictions = 'True' and Province like '%Cape'
+group by TownName
+having Population &gt; 100000</sql><sql name="SQL 3">update tblTowns
+set WaterRestrictions = &quot;True&quot;
+where Province = 'North West'</sql><sql name="SQL 4">insert into tblDams (DamName,DamID,River,YearCompleted)
+values (&quot;Saviour Dam&quot;,165,&quot;Vaal River&quot;,2020)</sql><sql name="SQL 5">select DamName, cast(100*DamLevel/Capacity as int) as CapacityPerc
+from tblDams
+group by DamName
+Having CapacityPerc &lt; 40</sql><sql name="SQL 6">select Province, cast(avg(Population)as int) as Average
+from tblTowns
+group by Province</sql><sql name="SQL 7">select Province, count(WaterRestrictions) as CriticalTowns
+from tblTowns
+where WaterRestrictions = 'True'
+group by Province
+having CriticalTowns &gt; 5</sql><sql name="SQL 8">select DamName, strftime('%Y',date('now'))-YearCompleted as AgeofDam
+from tblDams
+order by AgeofDam desc
+limit 10</sql><sql name="SQL 9">select Province,TownName, (substr(Province,1,4) || substr(TownName,2,4)) as 'UniqueCode'
+from tblTowns
+where population &gt; 20000</sql><current_tab id="8"/></tab_sql></sqlb_project>
