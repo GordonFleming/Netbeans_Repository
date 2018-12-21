@@ -12,7 +12,7 @@ public class Db_Connection
         {
             
             Class.forName("org.sqlite.JDBC");
-            String techworld3g = "jdbc:sqlite:/Users/gordonfleming/Users.db";
+            String techworld3g = "jdbc:sqlite:C:\\Users\\flemi\\Documents\\GitHub\\Netbeans_Repository\\Users.db";
             Connection myConnection = DriverManager.getConnection(techworld3g);
           
             return myConnection;
