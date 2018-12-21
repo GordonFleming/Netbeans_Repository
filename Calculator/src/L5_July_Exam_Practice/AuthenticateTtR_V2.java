@@ -12,8 +12,7 @@ import java.util.*;
 public class AuthenticateTtR_V2 {
     static String team;
     static int  running = 0, Prescore, Postscore, tunnels, totTunnels, longest;
-    int count=0;
-    
+    static int count = 0;
     public AuthenticateTtR_V2(String t,  int r, int pre, int post){
         team = t;
         running = r;
@@ -50,13 +49,21 @@ public class AuthenticateTtR_V2 {
     }
     
     public static void main(String[] args) {
+        int players;
+        Scanner in = new Scanner (System.in);
+        System.out.println("Enter the number of players: ");
+        players = in.nextInt();
         System.out.println("Welcome to the Ticket to ride Validator!");
         System.out.println("\nComplete the following...\n");
-        Scanner in = new Scanner (System.in);
+        while(players!=count){
         System.out.println("Enter your team name: \t");
         team = in.next();    
         System.out.println("Enter the score on the board: \t");
+        try{
         Prescore = in.nextInt();
+        }catch(InputMismatchException ex){
+            System.out.println("Wrong Input");
+        }
         System.out.println("Now enter the train lengths below, order doesn't matter:");
         String input;
         int inputNum;
@@ -93,7 +100,10 @@ public class AuthenticateTtR_V2 {
         
         Postscore = (running+totTunnels+longest);
         
-        System.out.println("Hello "+team+", \nYour score was calculated as  " + Postscore + "  compared to your prescore of  " + Prescore); 
-        System.out.println("Trains total count is "+running+" and Tunnels are "+totTunnels+" plus longest "+longest);
+        System.out.println("\nHello "+team+", \nYour score was calculated as\t" + Postscore + "\t\ncompared to your prescore of\t" + Prescore); 
+        System.out.println("Trains total count is "+running+" and Tunnels are "+totTunnels+" plus longest "+longest+" = Prescore of "+ Prescore);
+        System.out.println("\nThanks for using Gordon's Ticket to Ride validator!");
+        count++;
+        }
     }
 }
