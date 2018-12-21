@@ -41,8 +41,8 @@ public class Card {
         return magic;
     }
     public void ChangeSword(String s){
-        String temp = Inventory;
-        int p = Inventory.indexOf(",");
+        String temp = getInventory();
+        int p = getInventory().indexOf(",");
         temp = s + temp.substring(p);
         Inventory = temp;
     }
@@ -53,6 +53,13 @@ public class Card {
     }
     @Override
     public String toString(){
-      return name + "\t" + health + "\t" + magic + "\nInventory: " + Inventory;  
+      return getName() + "\t" + getHealth() + "\t" + getMagic() + "\nInventory: " + getInventory();  
+    }
+
+    /**
+     * @return the Inventory
+     */
+    public String getInventory() {
+        return Inventory;
     }
 }
