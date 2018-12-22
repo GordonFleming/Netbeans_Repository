@@ -91,6 +91,6 @@ public class TicketToRidePlayer {
     
     @Override
     public String toString(){
-        return "\t"+ getPlayers() +"\t\t|\t"+ getTeam()  +"\t\t|\t\t"+ getPrescore() +"\t\t|\t"+ getPostscore()+"+"+getLongestTorF()+"+"+getStationPen()+" = "+ (getPostscore()+getLongestTorF()+getStationPen()) +"\t\t|\t\t"+ getTunnels() +"\t\t|\t"+ getLongestYorN();                
+        return "\t"+ getPlayers() +"\t\t|\t"+ getTeam()  + "\t\t|\t\t"+ getTunnels() +"\t\t|\t"+ getLongestYorN() +"\t\t|\t\t"+ getPrescore() +"\t\t|\t"+ getPostscore()+"+"+getLongestTorF()+"+"+getStationPen()+"  = "+ (getPostscore()+getLongestTorF()+getStationPen());                
     }
 }

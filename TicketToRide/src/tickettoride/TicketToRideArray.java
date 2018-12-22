@@ -53,7 +53,7 @@ public class TicketToRideArray {
         TicketToRidePlayer temp;
         for(int i = 0; i < count-1; i++){
             for(int j = i+1;j<count;j++){
-                if(playerArr[i].getPostscore()-playerArr[j].getPostscore()<=0){
+                if(playerArr[i].getPrescore()-playerArr[j].getPrescore()<=0){
                     temp = playerArr[i];
                     playerArr[i] = playerArr[j];
                     playerArr[j] = temp;

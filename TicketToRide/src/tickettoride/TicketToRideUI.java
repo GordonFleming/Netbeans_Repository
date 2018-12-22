@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author gordonfleming
  */
 public class TicketToRideUI {
-            public static void main(String[] args) throws IOException {
+        public static void main(String[] args) throws IOException {
         
         //  Gets user input and writes to file  //
         
@@ -25,7 +25,7 @@ public class TicketToRideUI {
         PrintWriter printWriter = new PrintWriter(fileWriter);
         
         String team, longestYorN;
-        int Prescore, Postscore, players, tunnels, tunnelsTot = 0, running = 0;
+        int Prescore, Postscore, players, tunnels, tunnelsTot;
         int count = 0;
         
         Scanner in = new Scanner (System.in);
@@ -50,13 +50,14 @@ public class TicketToRideUI {
             System.out.println("Now enter the train lengths below, order doesn't matter:");
             String input;
             int inputNum;
+            int running = 0;
             while(true){ 
                 input = in.next();
                 if(input.equalsIgnoreCase("done")||input.equalsIgnoreCase("exit")||input.equalsIgnoreCase("0")){
                     break;
                 } else{
                     try{
-                        inputNum=Integer.parseInt(input);
+                        inputNum=Integer.parseInt(input);                                
                                     switch (inputNum) {
                                         case 0:
                                             break;
@@ -107,19 +108,20 @@ public class TicketToRideUI {
                         System.out.println("Enter valid number (0-3)");
                         tunnels = in.nextInt();                   
             }
-                tunnelsTot += tunnels*4;
+                tunnelsTot = tunnels*4;
                 printWriter.print(tunnelsTot+"\r\n");
                 count++;
         }       
         printWriter.close();
         System.out.println("\n< End of input >\n");   
+        
         //  Output  //
 
-        System.out.println("<    Output    >\n");
+        System.out.println("<  Ranked Output  >\n");
         TicketToRideArray player = new TicketToRideArray();
-        System.out.println("Amount of players:\t" + "|\tTeam:\t\t"+ "|\tScore from board:\t" + "|\tCalculated score:\t" + "|\tNumber of stations:\t" + "|\tLongest:");
+        System.out.println("Number of players:\t" + "|\tTeam:\t\t" + "|\tNumber of stations:\t" + "|\tLongest:\t" + "|\tScore from board:\t" + "|\tCalculated score:");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        //sort
+        player.Sort();
         System.out.println(player);
     }
 }
