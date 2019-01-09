@@ -15,14 +15,14 @@ public class TicketToRidePlayer {
     private String longestYorN; 
     private int players; 
     private int Prescore; 
-    private int tunnels; 
+    private int tunnels;
+    private int cards;
     
-    //private int longest;
     private int Postscore;
     private int stationPen;
     private int longestTorF;
     
-    public TicketToRidePlayer(int players,String team, int Prescore, int Postscore, int tunnels, String longestYorN, int longestTorF, int stationPen){
+    public TicketToRidePlayer(int players, String team, int Prescore, int Postscore, int tunnels, String longestYorN, int longestTorF, int stationPen, int cards){
         this.players = players;
         this.team = team;
         this.Prescore = Prescore;
@@ -31,6 +31,7 @@ public class TicketToRidePlayer {
         this.tunnels = tunnels;
         this.longestTorF = longestTorF;
         this.stationPen = stationPen;
+        this.cards = cards;
     }
 
     public String getTeam() {
@@ -39,40 +40,47 @@ public class TicketToRidePlayer {
     public void setTeam(String aTeam) {
         team = aTeam;
     }
-
+    
+    public int getCards(){
+        return cards;
+    }
+    public void setCards(int cards){
+        this.cards = cards;
+    }
+    
     public String getLongestYorN() {
         return longestYorN;
     }
-    public void setLongestYorN(String aLongestYorN) {
-        longestYorN = aLongestYorN;
+    public void setLongestYorN(String LongestYorN) {
+        longestYorN = LongestYorN;
     }
 
     public int getPlayers() {
         return players;
     }
-    public void setPlayers(int aPlayers) {
-        players = aPlayers;
+    public void setPlayers(int Players) {
+        players = Players;
     }
 
     public int getPrescore() {
         return Prescore;
     }
-    public void setPrescore(int aPrescore) {
-        Prescore = aPrescore;
+    public void setPrescore(int Prescore) {
+        this.Prescore = Prescore;
     }
 
     public int getTunnels() {
         return tunnels;
     }
-    public void setTunnels(int aTunnels) {
-        tunnels = aTunnels;
+    public void setTunnels(int Tunnels) {
+        tunnels = Tunnels;
     }
 
     public int getPostscore() {
         return Postscore;
     }
-    public void setPostscore(int aPostscore) {
-        Postscore = aPostscore;
+    public void setPostscore(int Postscore) {
+        this.Postscore = Postscore;
     }   
 
     public int getStationPen() {
@@ -91,6 +99,6 @@ public class TicketToRidePlayer {
     
     @Override
     public String toString(){
-        return "\t"+ getPlayers() +"\t\t|\t"+ getTeam()  + "\t\t|\t\t"+ getTunnels() +"\t\t|\t"+ getLongestYorN() +"\t\t|\t\t"+ getPrescore() +"\t\t|\t"+ getPostscore()+"+"+getLongestTorF()+"+"+getStationPen()+"  = "+ (getPostscore()+getLongestTorF()+getStationPen());                
+        return "\t"+ getPlayers() +"\t\t|\t"+ getTeam()  + "\t\t|\t\t"+ getTunnels() +"\t\t|\t"+ getLongestYorN() +"\t\t|\t\t"+ getPrescore() +"\t\t|\t"+ getPostscore()+"+"+getLongestTorF()+"+"+getStationPen()+"+"+getCards()+"  = "+ (getPostscore()+getLongestTorF()+getStationPen()+getCards());                
     }
 }

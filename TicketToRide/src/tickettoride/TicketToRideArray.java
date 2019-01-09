@@ -23,7 +23,7 @@ public class TicketToRideArray {
             Scanner scFile = new Scanner (new File("TicketToRide.txt"));
             
             String line;
-            int players, Prescore, Postscore, tunnels, longestTorF, stationPen, Total;
+            int players, Prescore, Postscore, tunnels, longestTorF, stationPen, cards;
             String team, longestYorN;
                         
             players = scFile.nextInt();
@@ -39,7 +39,8 @@ public class TicketToRideArray {
                 longestTorF = sc.nextInt();
                 tunnels = sc.nextInt();
                 stationPen = sc.nextInt();
-                playerArr [count] = new TicketToRidePlayer(players, team, Prescore, Postscore, tunnels, longestYorN, longestTorF, stationPen);
+                cards = sc.nextInt();
+                playerArr [count] = new TicketToRidePlayer(players, team, Prescore, Postscore, tunnels, longestYorN, longestTorF, stationPen, cards);
                 sc.close();
                 count++;
             }
@@ -53,7 +54,7 @@ public class TicketToRideArray {
         TicketToRidePlayer temp;
         for(int i = 0; i < count-1; i++){
             for(int j = i+1;j<count;j++){
-                if(playerArr[i].getPrescore()-playerArr[j].getPrescore()<=0){
+                if((playerArr[i].getPostscore() + playerArr[i].getCards()+playerArr[i].getLongestTorF()+playerArr[i].getStationPen())-(playerArr[j].getPostscore() + playerArr[j].getCards()+playerArr[j].getLongestTorF()+playerArr[j].getStationPen())<=0){
                     temp = playerArr[i];
                     playerArr[i] = playerArr[j];
                     playerArr[j] = temp;

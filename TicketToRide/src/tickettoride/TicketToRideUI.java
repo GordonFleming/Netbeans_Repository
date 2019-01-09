@@ -25,7 +25,7 @@ public class TicketToRideUI {
         PrintWriter printWriter = new PrintWriter(fileWriter);
         
         String team, longestYorN;
-        int Prescore, Postscore, players, tunnels, tunnelsTot;
+        int Prescore, players, tunnels, tunnelsTot, cardsTot;
         int count = 0;
         
         Scanner in = new Scanner (System.in);
@@ -109,7 +109,21 @@ public class TicketToRideUI {
                         tunnels = in.nextInt();                   
             }
                 tunnelsTot = tunnels*4;
-                printWriter.print(tunnelsTot+"\r\n");
+                printWriter.print(tunnelsTot+"#");
+                
+                System.out.println("Enter finished card scores");
+                    cardsTot = 0;
+                    int inputNum2;
+                    String input2;
+                    while(true){
+                            input2 = in.next();
+                        if(input2.equalsIgnoreCase("done")||input2.equalsIgnoreCase("exit")||input2.equalsIgnoreCase("0")){
+                            break;
+                        }else
+                            inputNum2 = Integer.parseInt(input2);
+                            cardsTot += inputNum2;
+                    }                 
+                    printWriter.print(cardsTot+"\r\n");
                 count++;
         }       
         printWriter.close();
