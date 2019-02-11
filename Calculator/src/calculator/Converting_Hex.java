@@ -7,7 +7,6 @@ package calculator;
 
 import static java.lang.System.in;
 import java.util.Scanner;
-import static sun.text.normalizer.Utility.hex;
 
 /**
  *
