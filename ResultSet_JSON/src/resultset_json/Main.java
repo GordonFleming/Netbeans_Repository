@@ -5,9 +5,8 @@
  */
 package resultset_json;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -27,9 +26,12 @@ public class Main {
     }
     public static void main(String[] args) throws SQLException, IOException {
         Main m = new Main();
+        PrintWriter writer = new PrintWriter("Data.json");
         List<JSONObject> jObj = m.getJsonObject();
         for(int i=0;i<jObj.size();i++){
-            System.out.println(jObj.get(i));
+            writer.println(jObj.get(i)+",");
+            System.out.println(jObj.get(i)+",");
         }
+        writer.close();
     }
 }

@@ -15,7 +15,16 @@ import java.sql.ResultSet;
  */
 public class EmpDAO {
     DbConnection dbconn = new DbConnection();
-    private static final String SQL = "select * from tblVenues";
+    private static final String SQL = "SELECT strftime('%H:%M', time('now','-8 hours'))as 'Time', Surname as StaffName, venue\n" +
+                                        "FROM tblTimeTablesLocation\n" +
+                                        "LEFT JOIN tblStaff on tblStaff.StaffID=tblTimeTablesLocation.StaffID,\n" +
+                                        "(SELECT PeriodName FROM tblTimings\n" +
+                                        "WHERE time('now','-8 hours') BETWEEN StartTime and EndTime\n" +
+                                        "AND week = 'Blue' \n" +
+                                        "AND WeekdayCode = strftime('%w',date('now')))subquery1\n" +
+                                        "WHERE period = PeriodName\n" +
+                                        "AND week = 'Blue' \n" +
+                                        "AND WeekdayCode = strftime('%w',date('now'))";
     Connection con = null;
     PreparedStatement pst=null;
     ResultSet resultSet=null;
