@@ -26,7 +26,7 @@ public class Main {
     }
     public static void main(String[] args) throws SQLException, IOException {
         Main m = new Main();
-        PrintWriter writer = new PrintWriter("Data.json");
+        PrintWriter writer = new PrintWriter("data.json");
         List<JSONObject> jObj = m.getJsonObject();
         for(int i=0;i<jObj.size();i++){
             writer.println(jObj.get(i)+",");
