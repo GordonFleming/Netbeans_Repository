@@ -1,0 +1,32 @@
+Crocker,Tristan,Runge
+Boutselis,George,Runge
+Marowa,Tadiwanashe,Runge,Head of Runge
+de Sousa,Oliver,Thomson
+drew,Gabriel,Thomson
+van der Walt,Estiaan,Thomson,Head of Thomson
+Raney,Andrew,Nash
+Ives,James,Nash
+de la Rey,Nash,Head of Nash
+Montgomery,Jack,Nash,Head of School
+Thiel,Nicholas,Hodgson
+Barr,Michael,Hodgson
+Sawkins,Luke,Hodgson,Head of Hodgson
+Scott-King,Jack,Hill
+Craker,Aidan,Hill
+Kgobe,Tsholofelo,Hill,Head of Hill
+Wills,Kaelin,Hill,School Prefect
+Haripershad,Nikhil,Fleming
+Bulunga,Thuba,Fleming
+Osato,Stefano,Fleming,Second Prefect
+van der Merwe,Ethan,Fleming,Head of Fleming
+Moosajee,Muhammad,Clarke,Student Affairs
+Khaile,Thato,Clayton
+Stride,Cameron,Clarke
+Hoffman,Michael,Clarke,Head of Clarke
+Nkosi,Kgosietsile,Clayton,Custos
+Fullerton,Cameron,Clayton,Head of Clayton
+Poole,Sean,Alston
+Dlamini,Zizwe,Alston,Head of Alston
+
+
+
