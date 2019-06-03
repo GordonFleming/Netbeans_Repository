@@ -11,7 +11,7 @@ package inheritedObjects;
  */
 public class Students {
     private String name, surname, house;
-    public Students(String name, String surname, String house){
+    public Students(String surname, String name, String house){
         this.name = name;
         this.surname = surname;
         this.house = house;
@@ -35,6 +35,6 @@ public class Students {
         this.house = house;
     }  
     public String toString(){
-        return getName() + ", " + getSurname() + ", " + getHouse();
+        return getSurname() + ", " + getName() + ", " + getHouse();
     }
 }

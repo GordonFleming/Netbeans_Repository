@@ -11,6 +11,9 @@ package inheritedObjects;
  */
 public class SchoolApp {
     public static void main(String[] args) {
-        
+        StudentArray student = new StudentArray("students.txt");
+        System.out.println("\nSorted Array:\n");
+        student.sortArray(true);
+        student.displayArray();
     }
 }

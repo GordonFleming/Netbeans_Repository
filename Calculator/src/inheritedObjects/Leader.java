@@ -11,8 +11,8 @@ package inheritedObjects;
  */
 public class Leader extends Students{    
     private String position;
-    public Leader(String name, String surname, String house, String position) {
-        super(name, surname, house);
+    public Leader(String surname, String name, String house, String position) {
+        super(surname, name, house);
         this.position = position;     
     }  
     public String getPosition() {

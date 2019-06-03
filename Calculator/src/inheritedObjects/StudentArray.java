@@ -17,9 +17,12 @@ import java.util.Scanner;
 public class StudentArray {
     private Students [] stu = new Students [100];
     private int size = 0;
-    public void populateArray(){
+    public StudentArray(String filename){
+        populateArray(filename);
+    }
+    public void populateArray(String filename){
         try{
-            try (Scanner scFile = new Scanner (new File("students.txt"))) {
+            try (Scanner scFile = new Scanner (new File(filename))) {
                 String line,n,s,h,p;
                 while(scFile.hasNext()){
                     line = scFile.nextLine();
@@ -52,23 +55,35 @@ public class StudentArray {
             System.out.println("Check the file path, maybe you entered it wrong.");
         }
     }
+    public void sortArray(boolean sort){
+        Students temp;
+        if(sort == false){
+            for(int i = 0; i < size-1; i++){
+                for(int j = i+1;j<size; j++){
+                    if(stu[i].getSurname().compareTo(stu[j].getSurname())>0){
+                        temp = stu[i];
+                        stu[i] = stu[j];
+                        stu[j] = temp;
+                    }
+                }
+            }
+        }else if(sort == true){
+            for(int i = 0; i < size-1; i++){
+                for(int j = i+1;j<size; j++){
+                    if((stu[i].getHouse()+stu[i].getSurname()).compareTo((stu[j].getHouse()+stu[j].getSurname()))>0){
+                        temp = stu[i];
+                        stu[i] = stu[j];
+                        stu[j] = temp;
+                    }
+                }
+            }  
+        }
+    }
     public void displayArray(){
         String temp = "";
         for(int i = 0;i<size-1;i++){
             temp = temp + stu[i] + "\n";
         } 
         System.out.println(temp);
-    }
-    public void sortArray(){
-        Students temp;
-        for(int i = 0; i < size-1; i++){
-            for(int j = i+1;j<size;j++){
-                if(stu[i].getSurname().compareTo(stu[j].getHouse())>0){
-                    temp = stu[i];
-                    stu[i] = stu[j];
-                    stu[j] = temp;
-                }
-            }
-        }
     }
 }
