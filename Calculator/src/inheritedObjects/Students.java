@@ -35,6 +35,6 @@ public class Students {
         this.house = house;
     }  
     public String toString(){
-        return getName() + " " + getSurname() + " " + getHouse();
+        return getName() + ", " + getSurname() + ", " + getHouse();
     }
 }

@@ -10,18 +10,19 @@ package inheritedObjects;
  * @author gordonfleming
  */
 public class Leader extends Students{    
-    private int position;
-    public Leader(String name, String surname, String house) {
+    private String position;
+    public Leader(String name, String surname, String house, String position) {
         super(name, surname, house);
+        this.position = position;     
     }  
-    public int getPosition() {
+    public String getPosition() {
         return position;
     }
-    public void setPosition(int position) {
+    public void setPosition(String position) {
         this.position = position;
-    }      
+    }       
     @Override
     public String toString(){
-      return getName() + " " + getSurname() + " " + getHouse() + " " + getPosition();  
+      return super.toString() + ", " + getPosition();  
     }
 }
