@@ -1,0 +1,21 @@
+27#Gerard Hallow#2018-05-20 10:55
+27#Gerard Hallow#2018-05-20 10:59#3#CAM02#Outdoor Camera 
+27#Gerard Hallow#2018-05-20 11:02#1#HDD15#External Hard Drive
+28#Simone Selt#2018-05-20 11:08
+28#Simone Selt#2018-05-20 11:18#3#LEN27#Wide angle lens
+30#Bruce Hepburn#2018-05-20 12:22
+31#Hilary Tinline#2018-05-20 14:40
+31#Hilary Tinline#2018-05-20 14:40#1#PRI91#HP LaserJet601
+32#Nomsa Sitale#2018-05-20 14:48
+32#Nomsa Sitale#2018-05-20 14:48#3#CAB1#Camera Cable
+27#Gerard Hallow#2018-05-20 14:68#3#CAM07#Indoor Camera
+33#Dom Bruce#2018-05-21 08:55
+33#Dom Bruce#2018-05-21 09:20#1#SSDT1#1TSSDDrive
+34#Hillary Tinline#2018-05-21 10:22#3#LEN38#Lens 28
+35#Chris Ryan#2018-05-21 15:45
+35#Chris Ryan#2018-05-21 15:55#1#PRI91#HP LaserJet6016
+35#Chris Ryan#2018-05-21 16:02#1#USBP#1#USB Hub
+35#Chris Ryan#2018-05-21 16:13#1#PRC#1#Printer Cable
+33#Dom Bruce#2018-05-21 16:20#1#USBP#1#USB Hub
+36#Teresa Nieuwoudt#2018-05-21 22:09
+36#Teresa Nieuwoudt#2018-05-21 22:28#1#HDD15#External Hard Drive
