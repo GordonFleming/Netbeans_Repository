@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/gordonfleming/Desktop/CashLessTuckshop.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="707"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblSales"/><default_encoding codec=""/><browsetable_info data="AAAAAwAAABYAdABiAGwAUwB0AHUAZABlAG4AdABzAAAAAwAAAAEAAAACAAAABAAAAKgAAAACAAAAvQAAAAAAAAAAAP//////////AAAAAP////8AAAAQAHQAYgBsAFMAYQBsAGUAcwAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAP////8AAAAOAHQAYgBsAE0AZQBuAHUAAAAEAAAAAQAAAAIAAAAFAAAAbAAAAAMAAAE7AAAAAAAAAAAA//////////8AAAAA/////w=="/></tab_browse><tab_sql><sql name="SQL 1">select *
+from tblMenu
+order by itemCategory asc, ItemDescription asc</sql><sql name="SQL 2">select *
+from tblMenu
+order by Cost desc
+limit 1</sql><sql name="SQL 3">update tblStudents
+set CardLimit = CardLimit*1.15
+where Grade = '8'</sql><sql name="SQL 4">select StudentName,grade,date('now')-DateOfBirth-1 as 'Age'
+from tblStudents
+group by StudentName
+having Age&lt;=15 </sql><sql name="SQL 5">select StudentName,Grade,Allergy,ItemDescription
+from tblStudents
+left join tblMenu on tblMenu.Allergen = tblStudents.Allergy
+where Allergy != ''
+group by StudentName
+order by StudentName</sql><sql name="SQL 6">select CardNumber,StudentName, count(*) as 'NumTransactions', 'R' || cast((CardLimit-sum(Cost))as double) as 'Remain'
+from tblStudents
+left join tblSales on tblStudents.CardNumber = tblSales.CNumber
+left join tblMenu on tblSales.INumber = tblMenu.ItemCode
+group by tblStudents.StudentName
+having Remain not null</sql><sql name="SQL 7">insert into tblMenu (ItemCode,ItemCategory,ItemDescription,Cost,Allergen,StockAvailable)
+values('BUR5','Burger','Hawaiian Burger',(select avg(cost) from tblMenu where ItemCategory = 'Burger'
+),'Gluten',50)</sql><sql name="SQL 8">select StudentName, CardLimit
+from tblStudents
+left join tblSales on tblSales.CNumber = tblStudents.CardNumber
+where SaleNumber is null
+group by StudentName
+</sql><sql name="SQL 10">select CardNumber, abs(random())%(20-1)+1
+from tblStudents
+left join tblSales on tblSales.CNumber=tblStudents.CardNumber
+where substr(INumber,1,3)='SAL'
+group by CardNumber</sql><current_tab id="8"/></tab_sql></sqlb_project>

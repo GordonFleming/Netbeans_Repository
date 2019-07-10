@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/gordonfleming/Desktop/MTBSA.sqlite" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="611"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="tblResults"/><default_encoding codec=""/><browsetable_info data="AAAABAAAABQAdABiAGwAUgBlAHMAdQBsAHQAcwAAAAAAAAAAAAAAAgAAAAQAAABkAAAAAgAAAGQAAAAAAAAAAAD//////////wAAAAD/////AAAAEAB0AGIAbABSAGEAYwBlAHMAAAAAAAAAAAAAAAIAAAAEAAAAvAAAAAIAAADsAAAAAAAAAAAA//////////8AAAAA/////wAAABYAdABiAGwAQwB5AGMAbABpAHMAdABzAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAA/////wAAABAAdABiAGwAQwBsAHUAYgBzAAAAAAAAAAAAAAACAAAAAwAAAHYAAAACAAABEwAAAAAAAAAAAP//////////AAAAAP////8="/></tab_browse><tab_sql><sql name="SQL 1">select *
+from tblCyclists
+where cyclistGender='f'
+order by cyclistName asc</sql><sql name="SQL 2">select cyclistName, cyclistDOB
+from tblCyclists
+where strftime('%m',cyclistDOB)='01' or strftime('%m',cyclistDOB)='02' or strftime('%m',cyclistDOB)='11' or strftime('%m',cyclistDOB)='12'</sql><sql name="SQL 3">select clubProvince, count(*) as 'NumCyclist'
+from tblCyclists
+left join tblClubs on tblClubs.clubID = tblCyclists.clubID
+group by clubProvince</sql><sql name="SQL 4">select cyclistName, clubName
+from tblCyclists
+left join tblClubs on tblClubs.clubID = tblCyclists.clubID
+where clubName = 'Tygerberg MTB'</sql><sql name="SQL 5">update tblResults
+set cyclistTime = '01:37:04'
+where resultID='18'</sql><sql name="SQL 6">insert into tblRaces(raceName,raceDist,raceDate)
+select 'Plate Race- ' as raceName,raceDist,raceDate from tblRaces</sql><sql name="SQL 7">select cyclistNAme,(strftime('%H',cyclistTime)*3600)+(strftime('%M',cyclistTime)*60)+(strftime('%S',cyclistTime)) as 'RaceTime', count(*) as 'NumRaces'
+from tblCyclists
+left join tblResults on tblResults.cyclistID = tblCyclists.cyclistID
+group by cyclistName
+having count(*) = 4
+order by RaceTime asc
+limit 3</sql><current_tab id="6"/></tab_sql></sqlb_project>
